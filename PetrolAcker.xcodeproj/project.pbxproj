@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50D10942889671F00303810 /* ConfigureFuelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50D10922889671F00303810 /* ConfigureFuelViewController.swift */; };
+		B50D10952889671F00303810 /* ConfigureFuelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50D10932889671F00303810 /* ConfigureFuelViewController.xib */; };
 		B519477628865C17001851FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B519477528865C17001851FA /* AppDelegate.swift */; };
 		B519477828865C17001851FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B519477728865C17001851FA /* SceneDelegate.swift */; };
 		B519477A28865C17001851FA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B519477928865C17001851FA /* MapViewController.swift */; };
@@ -20,9 +22,17 @@
 		B580056A288953F800E74FE7 /* SheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5800568288953F800E74FE7 /* SheetPresentationController.swift */; };
 		B58005702889567800E74FE7 /* OnTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B580056E2889567800E74FE7 /* OnTripViewController.swift */; };
 		B58005712889567800E74FE7 /* OnTripViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B580056F2889567800E74FE7 /* OnTripViewController.xib */; };
+		B58005732889592000E74FE7 /* CarSpecificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58005722889592000E74FE7 /* CarSpecificationViewController.swift */; };
+		B58005752889592A00E74FE7 /* CarSpecification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58005742889592A00E74FE7 /* CarSpecification.storyboard */; };
+		B580057728895C2500E74FE7 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B580057628895C2500E74FE7 /* HistoryViewController.swift */; };
+		B580057928895C2B00E74FE7 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B580057828895C2B00E74FE7 /* History.storyboard */; };
+		B580057C2889648100E74FE7 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B580057A2889648100E74FE7 /* HistoryTableViewCell.swift */; };
+		B580057D2889648100E74FE7 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B580057B2889648100E74FE7 /* HistoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B50D10922889671F00303810 /* ConfigureFuelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureFuelViewController.swift; sourceTree = "<group>"; };
+		B50D10932889671F00303810 /* ConfigureFuelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigureFuelViewController.xib; sourceTree = "<group>"; };
 		B519477228865C17001851FA /* PetrolAcker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetrolAcker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B519477528865C17001851FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B519477728865C17001851FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +48,12 @@
 		B5800568288953F800E74FE7 /* SheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetPresentationController.swift; sourceTree = "<group>"; };
 		B580056E2889567800E74FE7 /* OnTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTripViewController.swift; sourceTree = "<group>"; };
 		B580056F2889567800E74FE7 /* OnTripViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnTripViewController.xib; sourceTree = "<group>"; };
+		B58005722889592000E74FE7 /* CarSpecificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSpecificationViewController.swift; sourceTree = "<group>"; };
+		B58005742889592A00E74FE7 /* CarSpecification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CarSpecification.storyboard; sourceTree = "<group>"; };
+		B580057628895C2500E74FE7 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		B580057828895C2B00E74FE7 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		B580057A2889648100E74FE7 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		B580057B2889648100E74FE7 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B50D10962889672200303810 /* Configure Fuel */ = {
+			isa = PBXGroup;
+			children = (
+				B50D10922889671F00303810 /* ConfigureFuelViewController.swift */,
+				B50D10932889671F00303810 /* ConfigureFuelViewController.xib */,
+			);
+			path = "Configure Fuel";
+			sourceTree = "<group>";
+		};
 		B519476928865C17001851FA = {
 			isa = PBXGroup;
 			children = (
@@ -72,7 +97,12 @@
 			children = (
 				B519477528865C17001851FA /* AppDelegate.swift */,
 				B519477728865C17001851FA /* SceneDelegate.swift */,
-				B580056B288955AF00E74FE7 /* View */,
+				B5800582288964D600E74FE7 /* Map Screen */,
+				B580057E2889649000E74FE7 /* Start Trip */,
+				B580057F2889649800E74FE7 /* On Trip */,
+				B5800580288964A000E74FE7 /* Car Specification */,
+				B5800581288964BD00E74FE7 /* History */,
+				B50D10962889672200303810 /* Configure Fuel */,
 				B580056C288955BD00E74FE7 /* Utils */,
 				B519477B28865C17001851FA /* Main.storyboard */,
 				B519477E28865C18001851FA /* Assets.xcassets */,
@@ -80,18 +110,6 @@
 				B519478328865C18001851FA /* Info.plist */,
 			);
 			path = PetrolAcker;
-			sourceTree = "<group>";
-		};
-		B580056B288955AF00E74FE7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B519477928865C17001851FA /* MapViewController.swift */,
-				B58005612889467E00E74FE7 /* StartTripViewController.swift */,
-				B58005622889467E00E74FE7 /* StartTripViewController.xib */,
-				B580056E2889567800E74FE7 /* OnTripViewController.swift */,
-				B580056F2889567800E74FE7 /* OnTripViewController.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		B580056C288955BD00E74FE7 /* Utils */ = {
@@ -102,6 +120,52 @@
 				B5800568288953F800E74FE7 /* SheetPresentationController.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		B580057E2889649000E74FE7 /* Start Trip */ = {
+			isa = PBXGroup;
+			children = (
+				B58005612889467E00E74FE7 /* StartTripViewController.swift */,
+				B58005622889467E00E74FE7 /* StartTripViewController.xib */,
+			);
+			path = "Start Trip";
+			sourceTree = "<group>";
+		};
+		B580057F2889649800E74FE7 /* On Trip */ = {
+			isa = PBXGroup;
+			children = (
+				B580056E2889567800E74FE7 /* OnTripViewController.swift */,
+				B580056F2889567800E74FE7 /* OnTripViewController.xib */,
+			);
+			path = "On Trip";
+			sourceTree = "<group>";
+		};
+		B5800580288964A000E74FE7 /* Car Specification */ = {
+			isa = PBXGroup;
+			children = (
+				B58005722889592000E74FE7 /* CarSpecificationViewController.swift */,
+				B58005742889592A00E74FE7 /* CarSpecification.storyboard */,
+			);
+			path = "Car Specification";
+			sourceTree = "<group>";
+		};
+		B5800581288964BD00E74FE7 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				B580057628895C2500E74FE7 /* HistoryViewController.swift */,
+				B580057828895C2B00E74FE7 /* History.storyboard */,
+				B580057A2889648100E74FE7 /* HistoryTableViewCell.swift */,
+				B580057B2889648100E74FE7 /* HistoryTableViewCell.xib */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		B5800582288964D600E74FE7 /* Map Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B519477928865C17001851FA /* MapViewController.swift */,
+			);
+			path = "Map Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,9 +228,13 @@
 			files = (
 				B58005642889467E00E74FE7 /* StartTripViewController.xib in Resources */,
 				B58005712889567800E74FE7 /* OnTripViewController.xib in Resources */,
+				B580057928895C2B00E74FE7 /* History.storyboard in Resources */,
 				B519478228865C18001851FA /* LaunchScreen.storyboard in Resources */,
+				B58005752889592A00E74FE7 /* CarSpecification.storyboard in Resources */,
 				B519477F28865C18001851FA /* Assets.xcassets in Resources */,
+				B580057D2889648100E74FE7 /* HistoryTableViewCell.xib in Resources */,
 				B519477D28865C17001851FA /* Main.storyboard in Resources */,
+				B50D10952889671F00303810 /* ConfigureFuelViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,11 +248,15 @@
 				B58005702889567800E74FE7 /* OnTripViewController.swift in Sources */,
 				B580056628894B0C00E74FE7 /* Extension.swift in Sources */,
 				B58005632889467E00E74FE7 /* StartTripViewController.swift in Sources */,
+				B580057728895C2500E74FE7 /* HistoryViewController.swift in Sources */,
 				B519477A28865C17001851FA /* MapViewController.swift in Sources */,
 				B580056A288953F800E74FE7 /* SheetPresentationController.swift in Sources */,
 				B519477628865C17001851FA /* AppDelegate.swift in Sources */,
 				B5800569288953F800E74FE7 /* FocusPresentationController.swift in Sources */,
+				B580057C2889648100E74FE7 /* HistoryTableViewCell.swift in Sources */,
+				B58005732889592000E74FE7 /* CarSpecificationViewController.swift in Sources */,
 				B519477828865C17001851FA /* SceneDelegate.swift in Sources */,
+				B50D10942889671F00303810 /* ConfigureFuelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
