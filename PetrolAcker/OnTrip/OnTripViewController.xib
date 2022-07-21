@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnTripViewController" customModule="PetrolAcker" customModuleProvider="target">
+            <connections>
+                <outlet property="distanceTravelledLabel" destination="dkC-UB-ewe" id="UEN-hx-xsm"/>
+                <outlet property="fuelUsedLabel" destination="gDI-h1-gI3" id="XvP-HK-gcQ"/>
+                <outlet property="view" destination="qWV-bJ-Qje" id="6XK-Zv-IRT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="qWV-bJ-Qje">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="253"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculating Your Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bN1-UG-Gvw">
+                    <rect key="frame" x="20" y="19" width="309" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <color key="textColor" name="DarkBlue"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fuel Used" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QO7-2B-4Lt">
+                    <rect key="frame" x="20" y="86" width="77" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="DarkBlue"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance Travelled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghD-7d-FHg">
+                    <rect key="frame" x="20" y="121" width="140" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="DarkBlue"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Liter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDI-h1-gI3">
+                    <rect key="frame" x="223" y="86" width="51" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <color key="textColor" name="DarkBlue"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 Km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkC-UB-ewe">
+                    <rect key="frame" x="223" y="121" width="52" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <color key="textColor" name="DarkBlue"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdC-La-d0A">
+                    <rect key="frame" x="18" y="181" width="354" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="354" id="dyW-WG-Svu"/>
+                        <constraint firstAttribute="height" constant="52" id="s4J-rC-Zoy"/>
+                    </constraints>
+                    <color key="tintColor" name="Orange"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="End Trip">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="endTripPressed:" destination="-1" eventType="touchUpInside" id="EOg-ri-UXt"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="7qk-OQ-6EY"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="pdC-La-d0A" firstAttribute="top" secondItem="ghD-7d-FHg" secondAttribute="bottom" constant="39" id="1dk-RM-i5Z"/>
+                <constraint firstItem="QO7-2B-4Lt" firstAttribute="top" secondItem="bN1-UG-Gvw" secondAttribute="bottom" constant="28" id="8N8-SB-Izy"/>
+                <constraint firstItem="pdC-La-d0A" firstAttribute="leading" secondItem="7qk-OQ-6EY" secondAttribute="leading" constant="18" id="EhC-cs-3YU"/>
+                <constraint firstItem="gDI-h1-gI3" firstAttribute="leading" secondItem="QO7-2B-4Lt" secondAttribute="trailing" constant="126" id="KT1-Oc-y4R"/>
+                <constraint firstItem="ghD-7d-FHg" firstAttribute="leading" secondItem="7qk-OQ-6EY" secondAttribute="leading" constant="20" id="LIK-ro-Y1g"/>
+                <constraint firstItem="gDI-h1-gI3" firstAttribute="top" secondItem="bN1-UG-Gvw" secondAttribute="bottom" constant="28" id="Mms-jG-Ff5"/>
+                <constraint firstItem="dkC-UB-ewe" firstAttribute="leading" secondItem="ghD-7d-FHg" secondAttribute="trailing" constant="63" id="QuF-JE-j1i"/>
+                <constraint firstItem="pdC-La-d0A" firstAttribute="leading" secondItem="7qk-OQ-6EY" secondAttribute="leading" constant="18" id="XgK-CQ-ZCG"/>
+                <constraint firstItem="QO7-2B-4Lt" firstAttribute="leading" secondItem="7qk-OQ-6EY" secondAttribute="leading" constant="20" id="avM-9c-Aqu"/>
+                <constraint firstItem="pdC-La-d0A" firstAttribute="top" secondItem="ghD-7d-FHg" secondAttribute="bottom" constant="39" id="bKG-Ld-QXR"/>
+                <constraint firstItem="ghD-7d-FHg" firstAttribute="top" secondItem="QO7-2B-4Lt" secondAttribute="bottom" constant="14" id="shM-dz-n71"/>
+                <constraint firstItem="dkC-UB-ewe" firstAttribute="top" secondItem="gDI-h1-gI3" secondAttribute="bottom" constant="14" id="u4R-hC-1bt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-542.02898550724638" y="171.76339285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="DarkBlue">
+            <color red="0.0" green="0.13699999451637268" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Orange">
+            <color red="0.99199998378753662" green="0.46700000762939453" blue="0.0080000003799796104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -9,29 +9,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--History View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoryViewController" id="Y6W-OH-hqX" customClass="HistoryViewController" customModule="PetrolAcker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjM-Nz-m2D">
-                                <rect key="frame" x="24" y="72" width="110" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjM-Nz-m2D">
+                                <rect key="frame" x="24" y="72" width="196" height="39"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edr-J1-9cd">
-                                <rect key="frame" x="328" y="72" width="73" height="38"/>
+                                <rect key="frame" x="328.5" y="72" width="72.5" height="38"/>
                                 <color key="tintColor" name="Orange"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Done">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HkA-N2-FWm"/>
+                                </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pJN-pT-9Qi">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pJN-pT-9Qi">
                                 <rect key="frame" x="0.0" y="125" width="414" height="737"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -40,12 +43,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MjM-Nz-m2D" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="3PF-8x-bsh"/>
-                            <constraint firstItem="edr-J1-9cd" firstAttribute="leading" secondItem="MjM-Nz-m2D" secondAttribute="trailing" constant="194" id="IRG-NZ-gde"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="pJN-pT-9Qi" secondAttribute="bottom" id="JHc-eW-SKp"/>
                             <constraint firstItem="MjM-Nz-m2D" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="28" id="Lg3-Uj-ZJ9"/>
                             <constraint firstItem="edr-J1-9cd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="28" id="MzC-j5-Nc9"/>
                             <constraint firstItem="pJN-pT-9Qi" firstAttribute="top" secondItem="MjM-Nz-m2D" secondAttribute="bottom" constant="14" id="Z0B-n5-W4n"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="edr-J1-9cd" secondAttribute="trailing" constant="13" id="dDi-xc-VpM"/>
+                            <constraint firstItem="pJN-pT-9Qi" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="fkB-TN-gca"/>
                             <constraint firstItem="pJN-pT-9Qi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="oJx-Vs-FVe"/>
+                            <constraint firstItem="pJN-pT-9Qi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="q7y-pQ-9L0"/>
                         </constraints>
                     </view>
                 </viewController>

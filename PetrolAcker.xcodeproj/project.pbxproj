@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6784C55EDE10DEA47F6D5D1B /* Pods_PetrolAcker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBB4DEA2FDAEC1D8194C51DF /* Pods_PetrolAcker.framework */; };
 		B50D10942889671F00303810 /* ConfigureFuelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50D10922889671F00303810 /* ConfigureFuelViewController.swift */; };
 		B50D10952889671F00303810 /* ConfigureFuelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50D10932889671F00303810 /* ConfigureFuelViewController.xib */; };
 		B519477628865C17001851FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B519477528865C17001851FA /* AppDelegate.swift */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C7194A88F4AFB21B38F4621 /* Pods-PetrolAcker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetrolAcker.release.xcconfig"; path = "Target Support Files/Pods-PetrolAcker/Pods-PetrolAcker.release.xcconfig"; sourceTree = "<group>"; };
+		5AC3E1364A483F08EDC86C82 /* Pods-PetrolAcker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetrolAcker.debug.xcconfig"; path = "Target Support Files/Pods-PetrolAcker/Pods-PetrolAcker.debug.xcconfig"; sourceTree = "<group>"; };
 		B50D10922889671F00303810 /* ConfigureFuelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureFuelViewController.swift; sourceTree = "<group>"; };
 		B50D10932889671F00303810 /* ConfigureFuelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigureFuelViewController.xib; sourceTree = "<group>"; };
 		B519477228865C17001851FA /* PetrolAcker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetrolAcker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +57,7 @@
 		B580057828895C2B00E74FE7 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		B580057A2889648100E74FE7 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		B580057B2889648100E74FE7 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		BBB4DEA2FDAEC1D8194C51DF /* Pods_PetrolAcker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetrolAcker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,19 +65,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6784C55EDE10DEA47F6D5D1B /* Pods_PetrolAcker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B50D10962889672200303810 /* Configure Fuel */ = {
+		95032E76B2220EFCD12A83AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5AC3E1364A483F08EDC86C82 /* Pods-PetrolAcker.debug.xcconfig */,
+				1C7194A88F4AFB21B38F4621 /* Pods-PetrolAcker.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9B242B1FE9C4AB9C26A46CAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBB4DEA2FDAEC1D8194C51DF /* Pods_PetrolAcker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B50D10962889672200303810 /* ConfigureFuel */ = {
 			isa = PBXGroup;
 			children = (
 				B50D10922889671F00303810 /* ConfigureFuelViewController.swift */,
 				B50D10932889671F00303810 /* ConfigureFuelViewController.xib */,
 			);
-			path = "Configure Fuel";
+			path = ConfigureFuel;
 			sourceTree = "<group>";
 		};
 		B519476928865C17001851FA = {
@@ -81,6 +103,8 @@
 			children = (
 				B519477428865C17001851FA /* PetrolAcker */,
 				B519477328865C17001851FA /* Products */,
+				95032E76B2220EFCD12A83AD /* Pods */,
+				9B242B1FE9C4AB9C26A46CAD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +121,12 @@
 			children = (
 				B519477528865C17001851FA /* AppDelegate.swift */,
 				B519477728865C17001851FA /* SceneDelegate.swift */,
-				B5800582288964D600E74FE7 /* Map Screen */,
-				B580057E2889649000E74FE7 /* Start Trip */,
-				B580057F2889649800E74FE7 /* On Trip */,
-				B5800580288964A000E74FE7 /* Car Specification */,
+				B5800582288964D600E74FE7 /* MapScreen */,
+				B580057E2889649000E74FE7 /* StartTrip */,
+				B580057F2889649800E74FE7 /* OnTrip */,
+				B5800580288964A000E74FE7 /* CarSpecification */,
 				B5800581288964BD00E74FE7 /* History */,
-				B50D10962889672200303810 /* Configure Fuel */,
+				B50D10962889672200303810 /* ConfigureFuel */,
 				B580056C288955BD00E74FE7 /* Utils */,
 				B519477B28865C17001851FA /* Main.storyboard */,
 				B519477E28865C18001851FA /* Assets.xcassets */,
@@ -122,31 +146,31 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		B580057E2889649000E74FE7 /* Start Trip */ = {
+		B580057E2889649000E74FE7 /* StartTrip */ = {
 			isa = PBXGroup;
 			children = (
 				B58005612889467E00E74FE7 /* StartTripViewController.swift */,
 				B58005622889467E00E74FE7 /* StartTripViewController.xib */,
 			);
-			path = "Start Trip";
+			path = StartTrip;
 			sourceTree = "<group>";
 		};
-		B580057F2889649800E74FE7 /* On Trip */ = {
+		B580057F2889649800E74FE7 /* OnTrip */ = {
 			isa = PBXGroup;
 			children = (
 				B580056E2889567800E74FE7 /* OnTripViewController.swift */,
 				B580056F2889567800E74FE7 /* OnTripViewController.xib */,
 			);
-			path = "On Trip";
+			path = OnTrip;
 			sourceTree = "<group>";
 		};
-		B5800580288964A000E74FE7 /* Car Specification */ = {
+		B5800580288964A000E74FE7 /* CarSpecification */ = {
 			isa = PBXGroup;
 			children = (
 				B58005722889592000E74FE7 /* CarSpecificationViewController.swift */,
 				B58005742889592A00E74FE7 /* CarSpecification.storyboard */,
 			);
-			path = "Car Specification";
+			path = CarSpecification;
 			sourceTree = "<group>";
 		};
 		B5800581288964BD00E74FE7 /* History */ = {
@@ -160,12 +184,12 @@
 			path = History;
 			sourceTree = "<group>";
 		};
-		B5800582288964D600E74FE7 /* Map Screen */ = {
+		B5800582288964D600E74FE7 /* MapScreen */ = {
 			isa = PBXGroup;
 			children = (
 				B519477928865C17001851FA /* MapViewController.swift */,
 			);
-			path = "Map Screen";
+			path = MapScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B519478628865C18001851FA /* Build configuration list for PBXNativeTarget "PetrolAcker" */;
 			buildPhases = (
+				1DF8BA8EF781B07B918A1E2F /* [CP] Check Pods Manifest.lock */,
 				B519476E28865C17001851FA /* Sources */,
 				B519476F28865C17001851FA /* Frameworks */,
 				B519477028865C17001851FA /* Resources */,
+				F6C2B16839906FED478EAED2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -239,6 +265,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DF8BA8EF781B07B918A1E2F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PetrolAcker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6C2B16839906FED478EAED2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PetrolAcker/Pods-PetrolAcker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PetrolAcker/Pods-PetrolAcker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PetrolAcker/Pods-PetrolAcker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B519476E28865C17001851FA /* Sources */ = {
@@ -398,6 +466,7 @@
 		};
 		B519478728865C18001851FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AC3E1364A483F08EDC86C82 /* Pods-PetrolAcker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -426,6 +495,7 @@
 		};
 		B519478828865C18001851FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C7194A88F4AFB21B38F4621 /* Pods-PetrolAcker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
