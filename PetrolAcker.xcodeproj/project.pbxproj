@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		B519477628865C17001851FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B519477528865C17001851FA /* AppDelegate.swift */; };
 		B519477828865C17001851FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B519477728865C17001851FA /* SceneDelegate.swift */; };
-		B519477A28865C17001851FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B519477928865C17001851FA /* ViewController.swift */; };
+		B519477A28865C17001851FA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B519477928865C17001851FA /* MapViewController.swift */; };
 		B519477D28865C17001851FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B519477B28865C17001851FA /* Main.storyboard */; };
 		B519477F28865C18001851FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B519477E28865C18001851FA /* Assets.xcassets */; };
 		B519478228865C18001851FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B519478028865C18001851FA /* LaunchScreen.storyboard */; };
+		B58005632889467E00E74FE7 /* StartTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58005612889467E00E74FE7 /* StartTripViewController.swift */; };
+		B58005642889467E00E74FE7 /* StartTripViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B58005622889467E00E74FE7 /* StartTripViewController.xib */; };
+		B580056628894B0C00E74FE7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B580056528894B0C00E74FE7 /* Extension.swift */; };
+		B5800569288953F800E74FE7 /* FocusPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5800567288953F800E74FE7 /* FocusPresentationController.swift */; };
+		B580056A288953F800E74FE7 /* SheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5800568288953F800E74FE7 /* SheetPresentationController.swift */; };
+		B58005702889567800E74FE7 /* OnTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B580056E2889567800E74FE7 /* OnTripViewController.swift */; };
+		B58005712889567800E74FE7 /* OnTripViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B580056F2889567800E74FE7 /* OnTripViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B519477228865C17001851FA /* PetrolAcker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetrolAcker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B519477528865C17001851FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B519477728865C17001851FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B519477928865C17001851FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B519477928865C17001851FA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B519477C28865C17001851FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B519477E28865C18001851FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B519478128865C18001851FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B519478328865C18001851FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B58005612889467E00E74FE7 /* StartTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTripViewController.swift; sourceTree = "<group>"; };
+		B58005622889467E00E74FE7 /* StartTripViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartTripViewController.xib; sourceTree = "<group>"; };
+		B580056528894B0C00E74FE7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		B5800567288953F800E74FE7 /* FocusPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusPresentationController.swift; sourceTree = "<group>"; };
+		B5800568288953F800E74FE7 /* SheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetPresentationController.swift; sourceTree = "<group>"; };
+		B580056E2889567800E74FE7 /* OnTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTripViewController.swift; sourceTree = "<group>"; };
+		B580056F2889567800E74FE7 /* OnTripViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnTripViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +72,36 @@
 			children = (
 				B519477528865C17001851FA /* AppDelegate.swift */,
 				B519477728865C17001851FA /* SceneDelegate.swift */,
-				B519477928865C17001851FA /* ViewController.swift */,
+				B580056B288955AF00E74FE7 /* View */,
+				B580056C288955BD00E74FE7 /* Utils */,
 				B519477B28865C17001851FA /* Main.storyboard */,
 				B519477E28865C18001851FA /* Assets.xcassets */,
 				B519478028865C18001851FA /* LaunchScreen.storyboard */,
 				B519478328865C18001851FA /* Info.plist */,
 			);
 			path = PetrolAcker;
+			sourceTree = "<group>";
+		};
+		B580056B288955AF00E74FE7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B519477928865C17001851FA /* MapViewController.swift */,
+				B58005612889467E00E74FE7 /* StartTripViewController.swift */,
+				B58005622889467E00E74FE7 /* StartTripViewController.xib */,
+				B580056E2889567800E74FE7 /* OnTripViewController.swift */,
+				B580056F2889567800E74FE7 /* OnTripViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B580056C288955BD00E74FE7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B580056528894B0C00E74FE7 /* Extension.swift */,
+				B5800567288953F800E74FE7 /* FocusPresentationController.swift */,
+				B5800568288953F800E74FE7 /* SheetPresentationController.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +162,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58005642889467E00E74FE7 /* StartTripViewController.xib in Resources */,
+				B58005712889567800E74FE7 /* OnTripViewController.xib in Resources */,
 				B519478228865C18001851FA /* LaunchScreen.storyboard in Resources */,
 				B519477F28865C18001851FA /* Assets.xcassets in Resources */,
 				B519477D28865C17001851FA /* Main.storyboard in Resources */,
@@ -138,8 +177,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B519477A28865C17001851FA /* ViewController.swift in Sources */,
+				B58005702889567800E74FE7 /* OnTripViewController.swift in Sources */,
+				B580056628894B0C00E74FE7 /* Extension.swift in Sources */,
+				B58005632889467E00E74FE7 /* StartTripViewController.swift in Sources */,
+				B519477A28865C17001851FA /* MapViewController.swift in Sources */,
+				B580056A288953F800E74FE7 /* SheetPresentationController.swift in Sources */,
 				B519477628865C17001851FA /* AppDelegate.swift in Sources */,
+				B5800569288953F800E74FE7 /* FocusPresentationController.swift in Sources */,
 				B519477828865C17001851FA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -35,6 +35,13 @@ class MapViewController: UIViewController{
         return vc
     }()
     
+    private let onTripVC : OnTripViewController = {
+        let vc = OnTripViewController()
+        vc.modalPresentationStyle = .custom
+        layoutBottomSheet(vc.view)
+        return vc
+    }()
+    
     
 
     // MARK: - Lifecycle
@@ -42,10 +49,11 @@ class MapViewController: UIViewController{
     override func viewDidLoad() {
         
         startTripVC.transitioningDelegate = self
+        onTripVC.transitioningDelegate = self
         
         
         super.viewDidLoad()
-        present(startTripVC, animated: true)
+        present(onTripVC, animated: true)
         checkLocationServices()
 
     }
