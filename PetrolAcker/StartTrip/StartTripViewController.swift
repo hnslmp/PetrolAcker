@@ -22,7 +22,6 @@ class StartTripViewController: UIViewController {
     @IBOutlet weak var historyButton: UIButton!
     
     weak var delegate: StartTripViewControllerDelegate?
-    
     private var elevationAdjustments: Set<UIViewController> = []
     
     let carSubject = PublishSubject<Car>()
@@ -68,7 +67,7 @@ class StartTripViewController: UIViewController {
         configureFuelVC.modalPresentationStyle = .custom
         
         configureFuelVC.fuelSubjectObservable.subscribe(onNext:{ [unowned self] fuel in
-            fuelTankLabel.text = "\(Int(fuel)) %"
+            fuelTankLabel.text = "\(Int(fuel))%"
         }).disposed(by: disposeBag)
         
         layoutBottomSheet(configureFuelVC.view)
@@ -80,8 +79,7 @@ class StartTripViewController: UIViewController {
         carSpecificationButton.setTitle("  \(carName)", for: .normal)
                 
         let fuelStatus = (UserDefaultManager.shared.defaults?.value(forKey: "fuelStatus") as? Int) ?? 0
-
-        fuelTankLabel.text = "\(fuelStatus) %"
+        fuelTankLabel.text = "\(fuelStatus)%"
     }
     
     @IBAction func startTripPressed(_ sender: UIButton) {
@@ -93,14 +91,14 @@ class StartTripViewController: UIViewController {
         let storyboard = UIStoryboard(name: "CarSpecification", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "CarSpecificationViewController") as? CarSpecificationViewController else {return}
         
+        //Car Specification Input Subscriber
         vc.carSubjectObservable.subscribe(onNext:{ [unowned self] car in
-            
             UserDefaultManager.shared.defaults?.set(car.carName, forKey: "carName")
             UserDefaultManager.shared.defaults?.set(car.fuelConsumption, forKey: "fuelConsumption")
             UserDefaultManager.shared.defaults?.set(car.fuelTankCapacity, forKey: "fuelTankCapacity")
-            
             self.carSpecificationButton.setTitle("  \(car.carName)", for: .normal)
         }).disposed(by: disposeBag)
+        
         present(vc,animated: true)
     }
     
@@ -120,7 +118,7 @@ extension StartTripViewController: UIViewControllerTransitioningDelegate
             presenting: presenting
         )
         let insertion = elevationAdjustments.insert(presented)
-        // only elevate when vc was previously not in the set
+        // Only elevate when vc was previously not in the set
         pc.isNeedElevation = insertion.inserted
         return pc
     }

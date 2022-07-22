@@ -45,8 +45,8 @@ class ConfigureFuelViewController: UIViewController {
     
     func configureData(){
         let fuelStatus = UserDefaultManager.shared.defaults?.value(forKey: "fuelStatus") ?? 0
-        fuelSlider.value = fuelStatus as! Float
-        fuelLabel.text = "\(fuelStatus) %"
+        fuelSlider.value = fuelStatus as? Float ?? 0
+        fuelLabel.text = "\(fuelStatus)%"
     }
     
     func bindFuel(){
@@ -62,8 +62,10 @@ class ConfigureFuelViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
+        
         let intFuel = Int(fuelSlider.value)
         UserDefaultManager.shared.defaults?.set(intFuel, forKey: "fuelStatus")
+        
         dismiss(animated: true)
     }
 }
