@@ -50,7 +50,7 @@
                                     <constraint firstAttribute="height" constant="53" id="F4h-DV-LD9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -82,7 +82,7 @@
                                     <constraint firstAttribute="width" constant="370" id="iuP-Af-jYG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -115,6 +115,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="9u4-DY-LjV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -138,6 +141,11 @@
                             <constraint firstItem="Wbx-cJ-XhU" firstAttribute="top" secondItem="X25-S8-mm6" secondAttribute="bottom" constant="44" id="xB5-jz-CrC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="carNameTextField" destination="3e0-8u-fqx" id="cdn-5X-O97"/>
+                        <outlet property="fuelConsumptionTextField" destination="H8V-ik-ZJA" id="aXR-Zb-vTt"/>
+                        <outlet property="fuelTankCapacityTextField" destination="X25-S8-mm6" id="pTD-kv-8Ij"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

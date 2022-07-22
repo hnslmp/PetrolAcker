@@ -32,10 +32,11 @@ class MapViewController: UIViewController{
     private var prevlocation: CLLocation?
         
     private let distanceSubject = PublishSubject<CLLocationDistance>()
-    
+
     private var distanceSubjectObservables: Observable<CLLocationDistance>{
         return distanceSubject.asObservable()
     }
+    
     
     private let locationManager = CLLocationManager()
     private let regionInMeter:Double = 10000
@@ -62,7 +63,9 @@ class MapViewController: UIViewController{
         let onTripVC = OnTripViewController()
         onTripVC.transitioningDelegate = self
         onTripVC.delegate = self
+        
         onTripVC.distanceSubject = distanceSubject
+        
         onTripVC.modalPresentationStyle = .custom
         layoutBottomSheet(onTripVC.view)
         present(onTripVC, animated: true)

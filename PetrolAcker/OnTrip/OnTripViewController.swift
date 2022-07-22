@@ -15,6 +15,8 @@ import CoreLocation
 }
 
 class OnTripViewController: UIViewController {
+    
+    // MARK: - Properties
 
     @IBOutlet weak var fuelUsedLabel: UILabel!
     @IBOutlet weak var distanceTravelledLabel: UILabel!
@@ -32,6 +34,8 @@ class OnTripViewController: UIViewController {
     //Gotta change this ambil dr userdefault
     private var kmperl = 11
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         distanceSubjectObservables.subscribe(onNext:{ distance in
@@ -47,10 +51,6 @@ class OnTripViewController: UIViewController {
         ).disposed(by: disposeBag)
     }
     
-    func round1Decimal(_ number: Double) -> Double{
-        return round(number * 10) / 10.0
-    }
-                                             
     public init()
     {
         super.init(nibName: "OnTripViewController", bundle: nil)
@@ -60,7 +60,13 @@ class OnTripViewController: UIViewController {
     {
         super.init(coder: coder)
     }
-
+    
+    // MARK: - Functions
+    
+    func round1Decimal(_ number: Double) -> Double{
+        return round(number * 10) / 10.0
+    }
+                                             
     @IBAction func endTripPressed(_ sender: UIButton) {
         
         dismiss(animated: true)
