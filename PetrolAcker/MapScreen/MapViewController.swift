@@ -8,19 +8,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-
 import RxSwift
-
-func layoutBottomSheet(_ view: UIView)
-{
-    view.backgroundColor        = .systemBackground
-    view.layer.cornerRadius     = 20
-    view.layer.maskedCorners    = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-}
-
-struct distance{
-    let distance: CLLocationDistance
-}
 
 class MapViewController: UIViewController{
     
@@ -36,7 +24,6 @@ class MapViewController: UIViewController{
     private var distanceSubjectObservables: Observable<CLLocationDistance>{
         return distanceSubject.asObservable()
     }
-    
     
     private let locationManager = CLLocationManager()
     private let regionInMeter:Double = 10000

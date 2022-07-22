@@ -7,6 +7,13 @@
 
 import UIKit
 
+func layoutBottomSheet(_ view: UIView)
+{
+    view.backgroundColor        = .systemBackground
+    view.layer.cornerRadius     = 20
+    view.layer.maskedCorners    = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+}
+
 @IBDesignable extension UIButton {
 
     @IBInspectable var borderWidth: CGFloat {

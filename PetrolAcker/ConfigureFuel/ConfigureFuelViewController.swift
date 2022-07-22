@@ -6,24 +6,41 @@
 //
 
 import UIKit
+import RxSwift
 
 class ConfigureFuelViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    @IBOutlet weak var fuelLabel: UILabel!
+    @IBOutlet weak var fuelSlider: UISlider!
+    
+    private let fuelSubject = PublishSubject<Int>()
+    
+    var fuelSubjectObservable: Observable<Int>{
+        return fuelSubject.asObservable()
+    }
+    
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+    }
+    
+    public init()
+    {
+        super.init(nibName: "ConfigureFuelViewController", bundle: nil)
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    required init?(coder: NSCoder)
+    {
+        super.init(coder: coder)
     }
-    */
-
+    
+    // MARK: - Functions
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        dismiss(animated: true)
+    }
 }

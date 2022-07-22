@@ -27,28 +27,17 @@ class OnTripViewController: UIViewController {
     private var distanceSubjectObservables: Observable<CLLocationDistance>{
         return distanceSubject.asObservable()
     }
-    
     private let disposeBag = DisposeBag()
-    private var distanceTravelled: Double = 0
     
-    //Gotta change this ambil dr userdefault
-    private var kmperl = 11
+    private var distanceTravelled: Double = 0
+    private var kmperl = 0
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        distanceSubjectObservables.subscribe(onNext:{ distance in
-            
-            self.distanceTravelled += Double(distance/1000)
-            self.distanceTravelledLabel.text = String("\(self.round1Decimal(self.distanceTravelled)) Km")
-            
-            let fuelUsed = self.distanceTravelled/Double(self.kmperl)
-            self.fuelUsedLabel.text = String("\(self.round1Decimal(fuelUsed)) Liter")
-        },onCompleted: {
-            print("DEBUG: Completed")
-        }
-        ).disposed(by: disposeBag)
+        configureData()
+        bindDistance()
     }
     
     public init()
@@ -62,6 +51,23 @@ class OnTripViewController: UIViewController {
     }
     
     // MARK: - Functions
+    
+    func configureData(){
+        kmperl = UserDefaultManager.shared.defaults?.value(forKey: "fuelConsumption") as! Int
+    }
+    
+    func bindDistance(){
+        distanceSubjectObservables.subscribe(onNext:{ distance in
+            
+            self.distanceTravelled += Double(distance/1000)
+            self.distanceTravelledLabel.text = String("\(self.round1Decimal(self.distanceTravelled)) Km")
+            
+            let fuelUsed = self.distanceTravelled/Double(self.kmperl)
+            self.fuelUsedLabel.text = String("\(self.round1Decimal(fuelUsed)) Liter")
+        },onCompleted: {
+            print("DEBUG: Completed")
+        }).disposed(by: disposeBag)
+    }
     
     func round1Decimal(_ number: Double) -> Double{
         return round(number * 10) / 10.0
