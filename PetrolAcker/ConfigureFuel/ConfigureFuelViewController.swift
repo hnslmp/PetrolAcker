@@ -15,17 +15,20 @@ class ConfigureFuelViewController: UIViewController {
     @IBOutlet weak var fuelLabel: UILabel!
     @IBOutlet weak var fuelSlider: UISlider!
     
-    private let fuelSubject = PublishSubject<Int>()
+    private let fuelSubject = PublishSubject<Float>()
     
-    var fuelSubjectObservable: Observable<Int>{
+    var fuelSubjectObservable: Observable<Float>{
         return fuelSubject.asObservable()
     }
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureData()
+        bindFuel()
     }
     
     public init()
@@ -40,7 +43,27 @@ class ConfigureFuelViewController: UIViewController {
     
     // MARK: - Functions
     
+    func configureData(){
+        let fuelStatus = UserDefaultManager.shared.defaults?.value(forKey: "fuelStatus") ?? 0
+        fuelSlider.value = fuelStatus as! Float
+        fuelLabel.text = "\(fuelStatus) %"
+    }
+    
+    func bindFuel(){
+        fuelSubjectObservable.subscribe(onNext:{ [unowned self] fuel in
+            let intFuel = Int(fuel)
+            self.fuelLabel.text = "\(intFuel)%"
+        }).disposed(by: disposeBag)
+    }
+    
+    @IBAction func sliderChanged(_ sender: UISlider) {
+        let sliderValue = sender.value
+        fuelSubject.onNext(sliderValue)
+    }
+    
     @IBAction func saveButtonPressed(_ sender: Any) {
+        let intFuel = Int(fuelSlider.value)
+        UserDefaultManager.shared.defaults?.set(intFuel, forKey: "fuelStatus")
         dismiss(animated: true)
     }
 }

@@ -27,13 +27,16 @@
                     <color key="textColor" name="DarkBlue"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="e7t-ea-BDt">
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="e7t-ea-BDt">
                     <rect key="frame" x="55" y="241" width="304" height="45"/>
                     <color key="tintColor" name="MidnightBlue"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="G5G-1R-QRZ"/>
                         <constraint firstAttribute="width" constant="300" id="Yii-Gd-3Mo"/>
                     </constraints>
+                    <connections>
+                        <action selector="sliderChanged:" destination="-1" eventType="valueChanged" id="Efx-ah-ahl"/>
+                    </connections>
                 </slider>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueFuel" translatesAutoresizingMaskIntoConstraints="NO" id="Ig9-bt-aMo">
                     <rect key="frame" x="143" y="85" width="128" height="128"/>

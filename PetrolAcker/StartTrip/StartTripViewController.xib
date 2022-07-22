@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="carSpecificationButton" destination="TKb-pb-gD3" id="hcF-w2-UYc"/>
                 <outlet property="fuelTankImageView" destination="Sdf-qz-zNz" id="kgO-ar-nt3"/>
+                <outlet property="fuelTankLabel" destination="ZHQ-lY-BJt" id="PzK-I8-EtG"/>
                 <outlet property="historyButton" destination="Bcl-eF-JQh" id="w8N-vf-eXc"/>
                 <outlet property="view" destination="ncd-0U-hQv" id="2Gk-Lk-uxa"/>
             </connections>
@@ -132,7 +133,6 @@
                 <constraint firstItem="TKb-pb-gD3" firstAttribute="top" secondItem="DfR-gh-khq" secondAttribute="bottom" constant="12" id="2au-9p-IuT"/>
                 <constraint firstItem="H0x-VY-e5R" firstAttribute="leading" secondItem="nJf-Cy-Mmc" secondAttribute="leading" constant="20" id="73z-BB-QMl"/>
                 <constraint firstItem="DfR-gh-khq" firstAttribute="top" secondItem="d6g-id-nNz" secondAttribute="bottom" constant="8" symbolic="YES" id="BMr-qt-hWk"/>
-                <constraint firstItem="ZHQ-lY-BJt" firstAttribute="top" secondItem="nJf-Cy-Mmc" secondAttribute="top" constant="25" id="K68-03-7sI"/>
                 <constraint firstItem="Sdf-qz-zNz" firstAttribute="leading" secondItem="d6g-id-nNz" secondAttribute="trailing" constant="8" symbolic="YES" id="NEJ-nn-ejn"/>
                 <constraint firstItem="G5V-Py-a1j" firstAttribute="leading" secondItem="H0x-VY-e5R" secondAttribute="trailing" constant="32" id="UWZ-yS-ZZT"/>
                 <constraint firstItem="TKb-pb-gD3" firstAttribute="leading" secondItem="nJf-Cy-Mmc" secondAttribute="leading" constant="20" id="eAo-7q-nME"/>

@@ -18,6 +18,7 @@ class StartTripViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var carSpecificationButton: UIButton!
     @IBOutlet weak var fuelTankImageView: UIImageView!
+    @IBOutlet weak var fuelTankLabel: UILabel!
     @IBOutlet weak var historyButton: UIButton!
     
     weak var delegate: StartTripViewControllerDelegate?
@@ -28,6 +29,12 @@ class StartTripViewController: UIViewController {
     var carSubjectObservable: Observable<Car>{
         return carSubject.asObservable()
     }
+    
+    private let fuelSubject = PublishSubject<Float>()
+    var fuelSubjectObservable: Observable<Float>{
+        return fuelSubject.asObservable()
+    }
+    
     let disposeBag = DisposeBag()
     
     // MARK: - Lifecycle
@@ -59,6 +66,11 @@ class StartTripViewController: UIViewController {
         let configureFuelVC = ConfigureFuelViewController()
         configureFuelVC.transitioningDelegate = self
         configureFuelVC.modalPresentationStyle = .custom
+        
+        configureFuelVC.fuelSubjectObservable.subscribe(onNext:{ [unowned self] fuel in
+            fuelTankLabel.text = "\(Int(fuel)) %"
+        }).disposed(by: disposeBag)
+        
         layoutBottomSheet(configureFuelVC.view)
         present(configureFuelVC,animated: true)
     }
@@ -66,6 +78,10 @@ class StartTripViewController: UIViewController {
     func configureData(){
         let carName = (UserDefaultManager.shared.defaults?.value(forKey: "carName") as? String) ?? "Configure Here"
         carSpecificationButton.setTitle("  \(carName)", for: .normal)
+                
+        let fuelStatus = (UserDefaultManager.shared.defaults?.value(forKey: "fuelStatus") as? Int) ?? 0
+
+        fuelTankLabel.text = "\(fuelStatus) %"
     }
     
     @IBAction func startTripPressed(_ sender: UIButton) {

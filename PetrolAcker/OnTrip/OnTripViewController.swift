@@ -57,7 +57,7 @@ class OnTripViewController: UIViewController {
     }
     
     func bindDistance(){
-        distanceSubjectObservables.subscribe(onNext:{ distance in
+        distanceSubjectObservables.subscribe(onNext:{ [unowned self] distance in
             
             self.distanceTravelled += Double(distance/1000)
             self.distanceTravelledLabel.text = String("\(self.round1Decimal(self.distanceTravelled)) Km")
