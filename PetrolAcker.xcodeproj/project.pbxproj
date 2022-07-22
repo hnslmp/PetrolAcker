@@ -29,6 +29,7 @@
 		B580057928895C2B00E74FE7 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B580057828895C2B00E74FE7 /* History.storyboard */; };
 		B580057C2889648100E74FE7 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B580057A2889648100E74FE7 /* HistoryTableViewCell.swift */; };
 		B580057D2889648100E74FE7 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B580057B2889648100E74FE7 /* HistoryTableViewCell.xib */; };
+		B5CFA265288AC83200089F41 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5CFA263288AC83200089F41 /* CoreData.xcdatamodeld */; };
 		B5DDB5E5288A381400F1C8A3 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDB5E4288A381400F1C8A3 /* UserDefaultManager.swift */; };
 		B5DDB5E7288A3F8D00F1C8A3 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDB5E6288A3F8D00F1C8A3 /* CarModel.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		B580057828895C2B00E74FE7 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		B580057A2889648100E74FE7 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		B580057B2889648100E74FE7 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		B5CFA264288AC83200089F41 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		B5DDB5E4288A381400F1C8A3 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		B5DDB5E6288A3F8D00F1C8A3 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarModel.swift; path = ../../../../../../Documents/CarModel.swift; sourceTree = "<group>"; };
 		BBB4DEA2FDAEC1D8194C51DF /* Pods_PetrolAcker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetrolAcker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +138,7 @@
 				B519477E28865C18001851FA /* Assets.xcassets */,
 				B519478028865C18001851FA /* LaunchScreen.storyboard */,
 				B519478328865C18001851FA /* Info.plist */,
+				B5CFA263288AC83200089F41 /* CoreData.xcdatamodeld */,
 			);
 			path = PetrolAcker;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			files = (
 				B58005702889567800E74FE7 /* OnTripViewController.swift in Sources */,
 				B580056628894B0C00E74FE7 /* Extension.swift in Sources */,
+				B5CFA265288AC83200089F41 /* CoreData.xcdatamodeld in Sources */,
 				B58005632889467E00E74FE7 /* StartTripViewController.swift in Sources */,
 				B580057728895C2500E74FE7 /* HistoryViewController.swift in Sources */,
 				B519477A28865C17001851FA /* MapViewController.swift in Sources */,
@@ -552,6 +556,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B5CFA263288AC83200089F41 /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B5CFA264288AC83200089F41 /* CoreData.xcdatamodel */,
+			);
+			currentVersion = B5CFA264288AC83200089F41 /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B519476A28865C17001851FA /* Project object */;
 }

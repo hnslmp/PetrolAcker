@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import CoreLocation
+import CoreData
 
 @objc protocol OnTripViewControllerDelegate {
     func endTripPressed()
@@ -30,6 +31,7 @@ class OnTripViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     private var distanceTravelled: Double = 0
+    private var fuelUsed: Double = 0
     private var kmperl = 0
     
     // MARK: - Lifecycle
@@ -62,10 +64,9 @@ class OnTripViewController: UIViewController {
             self.distanceTravelled += Double(distance/1000)
             self.distanceTravelledLabel.text = String("\(self.round1Decimal(self.distanceTravelled)) Km")
             
-            let fuelUsed = self.distanceTravelled/Double(self.kmperl)
-            self.fuelUsedLabel.text = String("\(self.round1Decimal(fuelUsed)) Liter")
-        },onCompleted: {
-            print("DEBUG: Completed")
+            self.fuelUsed = self.distanceTravelled/Double(self.kmperl)
+            self.fuelUsedLabel.text = String("\(self.round1Decimal(self.fuelUsed)) Liter")
+            
         }).disposed(by: disposeBag)
     }
     
@@ -74,6 +75,26 @@ class OnTripViewController: UIViewController {
     }
                                              
     @IBAction func endTripPressed(_ sender: UIButton) {
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        
+        
+        guard let carName = UserDefaultManager.shared.defaults?.value(forKey: "carName") as? String else {return}
+        
+        let newEntry = Entries(context: context)
+        
+        newEntry.carName = carName
+        newEntry.fuelUsed = self.fuelUsed
+        newEntry.distanceTravelled = self.distanceTravelled
+        newEntry.tripDate = Date()
+        
+        do{
+            try context.save()
+            print("DEBUG: Succesfully saved data to coredata")
+        }catch{
+            print("DEBUG: Error saving to coredata")
+        }
         
         dismiss(animated: true)
         delegate?.endTripPressed()

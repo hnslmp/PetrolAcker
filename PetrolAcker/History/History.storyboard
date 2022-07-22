@@ -34,8 +34,8 @@
                                     <action selector="doneButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HkA-N2-FWm"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pJN-pT-9Qi">
-                                <rect key="frame" x="0.0" y="125" width="414" height="737"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pJN-pT-9Qi">
+                                <rect key="frame" x="0.0" y="159" width="414" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -46,13 +46,16 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="pJN-pT-9Qi" secondAttribute="bottom" id="JHc-eW-SKp"/>
                             <constraint firstItem="MjM-Nz-m2D" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="28" id="Lg3-Uj-ZJ9"/>
                             <constraint firstItem="edr-J1-9cd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="28" id="MzC-j5-Nc9"/>
-                            <constraint firstItem="pJN-pT-9Qi" firstAttribute="top" secondItem="MjM-Nz-m2D" secondAttribute="bottom" constant="14" id="Z0B-n5-W4n"/>
+                            <constraint firstItem="pJN-pT-9Qi" firstAttribute="top" secondItem="MjM-Nz-m2D" secondAttribute="bottom" constant="48" id="Z0B-n5-W4n"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="edr-J1-9cd" secondAttribute="trailing" constant="13" id="dDi-xc-VpM"/>
                             <constraint firstItem="pJN-pT-9Qi" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="fkB-TN-gca"/>
                             <constraint firstItem="pJN-pT-9Qi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="oJx-Vs-FVe"/>
                             <constraint firstItem="pJN-pT-9Qi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="q7y-pQ-9L0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="pJN-pT-9Qi" id="8R6-Xl-Xdg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
