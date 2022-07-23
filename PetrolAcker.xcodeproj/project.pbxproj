@@ -147,9 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				B580056528894B0C00E74FE7 /* Extension.swift */,
+				B5DDB5E4288A381400F1C8A3 /* UserDefaultManager.swift */,
 				B5800567288953F800E74FE7 /* FocusPresentationController.swift */,
 				B5800568288953F800E74FE7 /* SheetPresentationController.swift */,
-				B5DDB5E4288A381400F1C8A3 /* UserDefaultManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";

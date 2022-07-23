@@ -79,14 +79,13 @@ class OnTripViewController: UIViewController {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         
-        
         guard let carName = UserDefaultManager.shared.defaults?.value(forKey: "carName") as? String else {return}
         
         let newEntry = Entries(context: context)
         
         newEntry.carName = carName
-        newEntry.fuelUsed = self.fuelUsed
-        newEntry.distanceTravelled = self.distanceTravelled
+        newEntry.fuelUsed = round1Decimal(self.fuelUsed)
+        newEntry.distanceTravelled = round1Decimal(self.distanceTravelled)
         newEntry.tripDate = Date()
         
         do{

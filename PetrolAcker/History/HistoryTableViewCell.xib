@@ -66,6 +66,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="carNameLabel" destination="NdM-2G-je9" id="PFN-lI-bkV"/>
+                <outlet property="dateLabel" destination="pNM-N2-KJ4" id="f3R-YV-gav"/>
+                <outlet property="distanceTravelledLabel" destination="Bsa-6V-eeY" id="uzq-UG-RMK"/>
+                <outlet property="fuelUsedLabel" destination="Q7z-lD-Pdo" id="uKa-Ug-MSf"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="30.46875"/>
         </tableViewCell>
     </objects>
