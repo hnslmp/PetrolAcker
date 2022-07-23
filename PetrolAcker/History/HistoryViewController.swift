@@ -53,9 +53,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.carNameLabel.text = carName
         cell.dateLabel.text = stringDate
         cell.distanceTravelledLabel.text = "\(distanceTravelled) Km"
-//        String(distanceTravelled)
         cell.fuelUsedLabel.text = "\(fuelUsed) Liter"
-//        String(fuelUsed)r
         
         return cell
     }

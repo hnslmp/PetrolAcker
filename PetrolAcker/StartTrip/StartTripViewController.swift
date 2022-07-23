@@ -81,31 +81,57 @@ class StartTripViewController: UIViewController {
         let fuelStatus = (UserDefaultManager.shared.defaults?.value(forKey: "fuelStatus") as? Int) ?? 0
         fuelTankLabel.text = "\(fuelStatus)%"
     }
+        
+    func showConfigEmptyAlert() {
+        let alert = UIAlertController(
+            title: "Car Configuration Empty",
+            message: "Please configure your car specification first",
+            preferredStyle: .alert
+        )
+
+        alert.view.tintColor = UIColor(named: "MidnightBlue")
+        
+        alert.addAction(UIAlertAction(
+            title: "Okay will do",
+            style: .default,
+            handler: { action in
+            })
+        )
+
+        present(alert, animated: true)
+    }
     
     @IBAction func startTripPressed(_ sender: UIButton) {
-        dismiss(animated: true)
-        delegate?.startTripPressed()
+        if let carName = UserDefaultManager.shared.defaults?.value(forKey: "carName"),
+           let fuelConsumption = UserDefaultManager.shared.defaults?.value(forKey: "fuelConsumption"),
+           let fuelTankCapacity = UserDefaultManager.shared.defaults?.value(forKey: "fuelTankCapacity"){
+            dismiss(animated: true)
+            delegate?.startTripPressed()
+        }else{
+            showConfigEmptyAlert()
+        }
+        
+
     }
     
     @IBAction func carSpecificationPressed(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "CarSpecification", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "CarSpecificationViewController") as? CarSpecificationViewController else {return}
+        guard let carSpecVC = storyboard.instantiateViewController(withIdentifier: "CarSpecificationViewController") as? CarSpecificationViewController else {return}
         
-        //Car Specification Input Subscriber
-        vc.carSubjectObservable.subscribe(onNext:{ [unowned self] car in
+        carSpecVC.carSubjectObservable.subscribe(onNext:{ [unowned self] car in
             UserDefaultManager.shared.defaults?.set(car.carName, forKey: "carName")
             UserDefaultManager.shared.defaults?.set(car.fuelConsumption, forKey: "fuelConsumption")
             UserDefaultManager.shared.defaults?.set(car.fuelTankCapacity, forKey: "fuelTankCapacity")
             self.carSpecificationButton.setTitle("  \(car.carName)", for: .normal)
         }).disposed(by: disposeBag)
         
-        present(vc,animated: true)
+        present(carSpecVC,animated: true)
     }
     
     @IBAction func historyButtonPressed(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "History", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "HistoryViewController")
-        present(vc,animated: true)
+        let historyVC = storyboard.instantiateViewController(withIdentifier: "HistoryViewController")
+        present(historyVC,animated: true)
     }
 }
 

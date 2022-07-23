@@ -22,6 +22,9 @@ class CarSpecificationViewController: UIViewController {
     @IBOutlet weak var carNameTextField: UITextField!
     @IBOutlet weak var fuelConsumptionTextField: UITextField!
     @IBOutlet weak var fuelTankCapacityTextField: UITextField!
+    @IBOutlet weak var carNameFieldRequiredLabel: UILabel!
+    @IBOutlet weak var fuelConsumptionFieldRequiredLabel: UILabel!
+    @IBOutlet weak var fuelTankFieldRequiredLabel: UILabel!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -30,15 +33,58 @@ class CarSpecificationViewController: UIViewController {
     }
     
     // MARK: - Functions
+    
+    func checkTextFieldNotEmpty() -> Bool{
+        
+        var fieldFlag: Bool = true
+        
+        if carNameTextField.text?.isEmpty == true {
+            print("DEBUG: Car name empty")
+            carNameFieldRequiredLabel.isHidden = false
+            carNameFieldRequiredLabel.shake()
+            fieldFlag = false
+        }else{
+            carNameFieldRequiredLabel.isHidden = true
+        }
+        
+        if fuelTankCapacityTextField.text?.isEmpty == true {
+            print("DEBUG: Fuel tank empty")
+            fuelTankFieldRequiredLabel.isHidden = false
+            fuelTankFieldRequiredLabel.shake()
+            fieldFlag = false
+        }else{
+            fuelTankFieldRequiredLabel.isHidden = true
+        }
+        
+        if fuelConsumptionTextField.text?.isEmpty == true {
+            print("DEBUG: Fuel Consumption empty")
+            fuelConsumptionFieldRequiredLabel.isHidden = false
+            fuelConsumptionFieldRequiredLabel.shake()
+            fieldFlag = false
+        }else{
+            fuelConsumptionFieldRequiredLabel.isHidden = true
+        }
+        
+        return fieldFlag
+        
+        
+    
+    }
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         
-        guard let carName = carNameTextField.text else {return}
-        guard let fuelConsumption = fuelConsumptionTextField.text else {return}
-        guard let fuelTankCapacity = fuelTankCapacityTextField.text else {return}
+        if checkTextFieldNotEmpty() {
+            guard let carName = carNameTextField.text else {return}
+            guard let fuelConsumption = fuelConsumptionTextField.text else {return}
+            guard let fuelTankCapacity = fuelTankCapacityTextField.text else {return}
+            
+            let car = Car(carName: carName, fuelConsumption: Int(fuelConsumption)!, fuelTankCapacity: Int(fuelTankCapacity)!)
+            
+            carSubject.onNext(car)
         
-        let car = Car(carName: carName, fuelConsumption: Int(fuelConsumption)!, fuelTankCapacity: Int(fuelTankCapacity)!)
-        carSubject.onNext(car)
-    
-        dismiss(animated: true)
+            dismiss(animated: true)
+            
+        }
+        
+        
     }
 }

@@ -53,7 +53,7 @@ class OnTripViewController: UIViewController {
     }
     
     // MARK: - Functions
-    
+
     func configureData(){
         kmperl = UserDefaultManager.shared.defaults?.value(forKey: "fuelConsumption") as! Int
     }
@@ -73,11 +73,39 @@ class OnTripViewController: UIViewController {
     func round1Decimal(_ number: Double) -> Double{
         return round(number * 10) / 10.0
     }
-                                             
-    @IBAction func endTripPressed(_ sender: UIButton) {
+    
+    func endTripAlert() {
+        let alert = UIAlertController(
+            title: "End Trip?",
+            message: "Are you sure you want to end the trip?",
+            preferredStyle: .alert
+        )
+
+        alert.view.tintColor = UIColor(named: "MidnightBlue")
+
+        //Yes Choice
+        alert.addAction(UIAlertAction(
+            title: "End Trip",
+            style: .default,
+            handler: { action in
+                self.dismiss(animated: true)
+                self.delegate?.endTripPressed()
+            })
+        )
         
+        //Cancel Choice
+        alert.addAction(UIAlertAction(
+            title: "Cancel",
+            style: .destructive,
+            handler: { action in
+            })
+        )
+
+        present(alert, animated: true)
+    }
+    
+    func saveTrip(){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
         
         guard let carName = UserDefaultManager.shared.defaults?.value(forKey: "carName") as? String else {return}
         
@@ -94,9 +122,10 @@ class OnTripViewController: UIViewController {
         }catch{
             print("DEBUG: Error saving to coredata")
         }
-        
-        dismiss(animated: true)
-        delegate?.endTripPressed()
-        
+    }
+                                             
+    @IBAction func endTripPressed(_ sender: UIButton) {
+        saveTrip()
+        endTripAlert()
     }
 }
