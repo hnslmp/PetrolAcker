@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartTripViewController" customModule="PetrolAcker" customModuleProvider="target">
             <connections>
+                <outlet property="approxKmLabel" destination="G5V-Py-a1j" id="Zgu-bB-LMm"/>
                 <outlet property="carSpecificationButton" destination="TKb-pb-gD3" id="hcF-w2-UYc"/>
                 <outlet property="fuelTankImageView" destination="Sdf-qz-zNz" id="kgO-ar-nt3"/>
                 <outlet property="fuelTankLabel" destination="ZHQ-lY-BJt" id="PzK-I8-EtG"/>
@@ -108,8 +109,8 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 Km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5V-Py-a1j">
-                    <rect key="frame" x="214" y="167" width="58" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="186" y="168" width="62" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" name="DarkBlue"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -136,7 +137,7 @@
                 <constraint firstItem="DfR-gh-khq" firstAttribute="top" secondItem="d6g-id-nNz" secondAttribute="bottom" constant="8" symbolic="YES" id="BMr-qt-hWk"/>
                 <constraint firstItem="ZHQ-lY-BJt" firstAttribute="leading" secondItem="DfR-gh-khq" secondAttribute="trailing" constant="70" id="Gv5-wu-BMA"/>
                 <constraint firstItem="Sdf-qz-zNz" firstAttribute="leading" secondItem="d6g-id-nNz" secondAttribute="trailing" constant="8" symbolic="YES" id="NEJ-nn-ejn"/>
-                <constraint firstItem="G5V-Py-a1j" firstAttribute="leading" secondItem="H0x-VY-e5R" secondAttribute="trailing" constant="32" id="UWZ-yS-ZZT"/>
+                <constraint firstItem="G5V-Py-a1j" firstAttribute="leading" secondItem="H0x-VY-e5R" secondAttribute="trailing" constant="4" id="UWZ-yS-ZZT"/>
                 <constraint firstItem="TKb-pb-gD3" firstAttribute="leading" secondItem="nJf-Cy-Mmc" secondAttribute="leading" constant="20" id="eAo-7q-nME"/>
                 <constraint firstItem="H0x-VY-e5R" firstAttribute="top" secondItem="TKb-pb-gD3" secondAttribute="bottom" constant="16" id="ffF-V8-Fwm"/>
                 <constraint firstItem="Bcl-eF-JQh" firstAttribute="centerX" secondItem="ncd-0U-hQv" secondAttribute="centerX" id="ilh-oU-L8o"/>
@@ -144,7 +145,7 @@
                 <constraint firstItem="Bcl-eF-JQh" firstAttribute="top" secondItem="elD-IX-Mqb" secondAttribute="bottom" constant="16" id="lFX-fC-dbl"/>
                 <constraint firstItem="DfR-gh-khq" firstAttribute="leading" secondItem="nJf-Cy-Mmc" secondAttribute="leading" constant="20" id="r2U-4W-eIe"/>
                 <constraint firstItem="nJf-Cy-Mmc" firstAttribute="trailing" secondItem="ZHQ-lY-BJt" secondAttribute="trailing" constant="44" id="rWz-FN-mRg"/>
-                <constraint firstItem="elD-IX-Mqb" firstAttribute="top" secondItem="G5V-Py-a1j" secondAttribute="bottom" constant="24" id="upd-24-HZA"/>
+                <constraint firstItem="elD-IX-Mqb" firstAttribute="top" secondItem="G5V-Py-a1j" secondAttribute="bottom" constant="23" id="upd-24-HZA"/>
                 <constraint firstItem="elD-IX-Mqb" firstAttribute="top" secondItem="H0x-VY-e5R" secondAttribute="bottom" constant="24" id="xDl-w5-W3Y"/>
                 <constraint firstItem="elD-IX-Mqb" firstAttribute="centerX" secondItem="ncd-0U-hQv" secondAttribute="centerX" id="ydk-3s-NwO"/>
             </constraints>

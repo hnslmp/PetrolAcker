@@ -28,7 +28,7 @@ class OnTripViewController: UIViewController {
     private var distanceSubjectObservables: Observable<CLLocationDistance>{
         return distanceSubject.asObservable()
     }
-    private let disposeBag = DisposeBag()
+    private var disposeBag = DisposeBag()
     
     private var distanceTravelled: Double = 0
     private var fuelUsed: Double = 0
@@ -52,6 +52,7 @@ class OnTripViewController: UIViewController {
         super.init(coder: coder)
     }
     
+    
     // MARK: - Functions
 
     func configureData(){
@@ -59,6 +60,7 @@ class OnTripViewController: UIViewController {
     }
     
     func bindDistance(){
+        //Mapkit data subscriber
         distanceSubjectObservables.subscribe(onNext:{ [unowned self] distance in
             
             self.distanceTravelled += Double(distance/1000)
@@ -67,6 +69,9 @@ class OnTripViewController: UIViewController {
             self.fuelUsed = self.distanceTravelled/Double(self.kmperl)
             self.fuelUsedLabel.text = String("\(self.round1Decimal(self.fuelUsed)) Liter")
             
+            
+
+            
         }).disposed(by: disposeBag)
     }
     
@@ -74,7 +79,17 @@ class OnTripViewController: UIViewController {
         return round(number * 10) / 10.0
     }
     
-    func endTripAlert() {
+    func configFuelStatus(){
+        let fuelStatus = UserDefaultManager.shared.defaults?.value(forKey: "fuelStatus") as! Double
+        let fuelTankCapacity = UserDefaultManager.shared.defaults?.value(forKey: "fuelTankCapacity") as! Double
+        let fuelConsumedPercent = self.fuelUsed/fuelTankCapacity*100
+        let fuelNow = fuelStatus-fuelConsumedPercent
+        
+        print("DEBUG: Fuel now \(fuelNow)")
+        UserDefaultManager.shared.defaults?.set(fuelNow, forKey: "fuelStatus")
+    }
+    
+    func endTripAlert(){
         let alert = UIAlertController(
             title: "End Trip?",
             message: "Are you sure you want to end the trip?",
@@ -88,6 +103,8 @@ class OnTripViewController: UIViewController {
             title: "End Trip",
             style: .default,
             handler: { action in
+                self.configFuelStatus()
+                self.saveTrip()
                 self.dismiss(animated: true)
                 self.delegate?.endTripPressed()
             })
@@ -100,7 +117,9 @@ class OnTripViewController: UIViewController {
             handler: { action in
             })
         )
-
+        
+        
+        
         present(alert, animated: true)
     }
     
@@ -122,10 +141,11 @@ class OnTripViewController: UIViewController {
         }catch{
             print("DEBUG: Error saving to coredata")
         }
+        
+        disposeBag = DisposeBag()
     }
                                              
     @IBAction func endTripPressed(_ sender: UIButton) {
-        saveTrip()
         endTripAlert()
     }
 }

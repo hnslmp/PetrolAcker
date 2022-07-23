@@ -46,7 +46,7 @@ func layoutBottomSheet(_ view: UIView)
     }
 }
 
-public extension UIView {
+extension UIView {
 
     func shake(count : Float = 1,for duration : TimeInterval = 0.05,withTranslation translation : Float = 5) {
 

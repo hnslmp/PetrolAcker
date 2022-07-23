@@ -122,7 +122,7 @@ extension MapViewController: CLLocationManagerDelegate{
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        //todo
+        
     }
 }
 

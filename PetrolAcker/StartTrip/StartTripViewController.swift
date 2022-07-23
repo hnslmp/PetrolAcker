@@ -20,6 +20,7 @@ class StartTripViewController: UIViewController {
     @IBOutlet weak var fuelTankImageView: UIImageView!
     @IBOutlet weak var fuelTankLabel: UILabel!
     @IBOutlet weak var historyButton: UIButton!
+    @IBOutlet weak var approxKmLabel: UILabel!
     
     weak var delegate: StartTripViewControllerDelegate?
     private var elevationAdjustments: Set<UIViewController> = []
@@ -38,6 +39,7 @@ class StartTripViewController: UIViewController {
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
+        print("DEBUG: StartTripViewDidLoad")
         super.viewDidLoad()
         configureData()
         addFuelTankGesture()
@@ -78,8 +80,14 @@ class StartTripViewController: UIViewController {
         let carName = (UserDefaultManager.shared.defaults?.value(forKey: "carName") as? String) ?? "Configure Here"
         carSpecificationButton.setTitle("  \(carName)", for: .normal)
                 
-        let fuelStatus = (UserDefaultManager.shared.defaults?.value(forKey: "fuelStatus") as? Int) ?? 0
+        let fuelStatus = (UserDefaultManager.shared.defaults?.value(forKey: "fuelStatus") as? Double) ?? 0
         fuelTankLabel.text = "\(fuelStatus)%"
+        
+        let fuelConsumption = UserDefaultManager.shared.defaults?.value(forKey: "fuelConsumption") as? Int ?? 0
+        let fuelTankCapacity = UserDefaultManager.shared.defaults?.value(forKey: "fuelTankCapacity") as? Int ?? 0
+        
+        let fuelRange = Int(fuelConsumption*fuelTankCapacity*Int(fuelStatus)/100)
+        approxKmLabel.text = "\(fuelRange) Km"
     }
         
     func showConfigEmptyAlert() {

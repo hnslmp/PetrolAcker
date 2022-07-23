@@ -70,6 +70,7 @@ class CarSpecificationViewController: UIViewController {
         
     
     }
+    
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         
         if checkTextFieldNotEmpty() {
@@ -80,7 +81,7 @@ class CarSpecificationViewController: UIViewController {
             let car = Car(carName: carName, fuelConsumption: Int(fuelConsumption)!, fuelTankCapacity: Int(fuelTankCapacity)!)
             
             carSubject.onNext(car)
-        
+            
             dismiss(animated: true)
             
         }
