@@ -80,10 +80,10 @@ class OnTripViewController: UIViewController {
     }
     
     func configFuelStatus(){
-        let fuelStatus = UserDefaultManager.shared.defaults?.value(forKey: "fuelStatus") as! Double
+        let fuelStatus = UserDefaultManager.shared.defaults?.value(forKey: "fuelStatus") as! Float
         let fuelTankCapacity = UserDefaultManager.shared.defaults?.value(forKey: "fuelTankCapacity") as! Double
         let fuelConsumedPercent = self.fuelUsed/fuelTankCapacity*100
-        let fuelNow = fuelStatus-fuelConsumedPercent
+        let fuelNow = fuelStatus - Float(fuelConsumedPercent)
         
         print("DEBUG: Fuel now \(fuelNow)")
         UserDefaultManager.shared.defaults?.set(fuelNow, forKey: "fuelStatus")
