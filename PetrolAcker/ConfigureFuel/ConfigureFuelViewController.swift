@@ -17,8 +17,14 @@ class ConfigureFuelViewController: UIViewController {
     
     private let fuelSubject = PublishSubject<Float>()
     
-    var fuelSubjectObservable: Observable<Float>{
+    private var fuelSubjectObservable: Observable<Float>{
         return fuelSubject.asObservable()
+    }
+    
+    private let startScreenFuelSubject = PublishSubject<Float>()
+    
+    var startScreenFuelSubjectObservable: Observable<Float>{
+        return startScreenFuelSubject.asObservable()
     }
     
     private let disposeBag = DisposeBag()
@@ -42,14 +48,11 @@ class ConfigureFuelViewController: UIViewController {
     }
     
     // MARK: - Functions
-    
     func configureData(){
-        if let fuelStatus = UserDefaultManager.shared.defaults?.value(forKey: "fuelStatus") as? Float{
-            fuelSlider.value = fuelStatus
-            fuelLabel.text = "\(Int(fuelStatus))%"
-        } else{
-            print("DEBUG: else")
-        }
+        
+        guard let fuelStatus = UserDefaultManager.shared.defaults?.value(forKey: "fuelStatus") as? Float else {return}
+        fuelSlider.value = fuelStatus
+        fuelLabel.text = "\(Int(fuelStatus))%"
        
     }
     
@@ -69,6 +72,7 @@ class ConfigureFuelViewController: UIViewController {
         
         let sliderFuelStatus = fuelSlider.value
         UserDefaultManager.shared.defaults?.set(sliderFuelStatus, forKey: "fuelStatus")
+        startScreenFuelSubject.onNext(sliderFuelStatus)
         
         dismiss(animated: true)
     }

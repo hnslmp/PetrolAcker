@@ -68,15 +68,16 @@ class StartTripViewController: UIViewController {
         configureFuelVC.transitioningDelegate = self
         configureFuelVC.modalPresentationStyle = .custom
         
-        configureFuelVC.fuelSubjectObservable.subscribe(onNext:{ [unowned self] fuel in
-            fuelTankLabel.text = "\(Int(fuel))%"
+        configureFuelVC.startScreenFuelSubjectObservable.subscribe(onNext:{ [unowned self] _ in
             
-            let fuelConsumption = UserDefaultManager.shared.defaults?.value(forKey: "fuelConsumption") as? Int ?? 0
-            let fuelTankCapacity = UserDefaultManager.shared.defaults?.value(forKey: "fuelTankCapacity") as? Int ?? 0
-            let fuelRange = Int(fuelConsumption*fuelTankCapacity*Int(fuel)/100)
-            
-            approxKmLabel.text = "\(fuelRange) Km"
-            
+            configureData()
+//            fuelTankLabel.text = "\(Int(fuel))%"
+//
+//            let fuelConsumption = UserDefaultManager.shared.defaults?.value(forKey: "fuelConsumption") as? Int ?? 0
+//            let fuelTankCapacity = UserDefaultManager.shared.defaults?.value(forKey: "fuelTankCapacity") as? Int ?? 0
+//            let fuelRange = Int(fuelConsumption*fuelTankCapacity*Int(fuel)/100)
+//
+//            approxKmLabel.text = "\(fuelRange) Km"
         }).disposed(by: disposeBag)
         
         layoutBottomSheet(configureFuelVC.view)
