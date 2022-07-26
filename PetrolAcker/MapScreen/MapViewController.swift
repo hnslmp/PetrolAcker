@@ -67,7 +67,7 @@ class MapViewController: UIViewController{
     func checkLocationServices(){
         if CLLocationManager.locationServicesEnabled(){
             setupLocationManager()
-            checkLocationAuthorization()
+            configureMapView()
         }
         else{
             
@@ -81,23 +81,11 @@ class MapViewController: UIViewController{
         }
     }
     
-    func checkLocationAuthorization(){
-        switch CLLocationManager.authorizationStatus() {
-        case .authorizedWhenInUse:
-            mapView.showsUserLocation = true
-            centerViewOnUserLocation()
-            locationManager.startUpdatingLocation()
-            break
-        case .denied:
-            break
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-            break
-        case .restricted:
-            break
-        case .authorizedAlways:
-            break
-        }
+    func configureMapView(){
+        locationManager.requestWhenInUseAuthorization()
+        mapView.showsUserLocation = true
+        centerViewOnUserLocation()
+        locationManager.startUpdatingLocation()
     }
     
 }

@@ -69,15 +69,7 @@ class StartTripViewController: UIViewController {
         configureFuelVC.modalPresentationStyle = .custom
         
         configureFuelVC.startScreenFuelSubjectObservable.subscribe(onNext:{ [unowned self] _ in
-            
             configureData()
-//            fuelTankLabel.text = "\(Int(fuel))%"
-//
-//            let fuelConsumption = UserDefaultManager.shared.defaults?.value(forKey: "fuelConsumption") as? Int ?? 0
-//            let fuelTankCapacity = UserDefaultManager.shared.defaults?.value(forKey: "fuelTankCapacity") as? Int ?? 0
-//            let fuelRange = Int(fuelConsumption*fuelTankCapacity*Int(fuel)/100)
-//
-//            approxKmLabel.text = "\(fuelRange) Km"
         }).disposed(by: disposeBag)
         
         layoutBottomSheet(configureFuelVC.view)
@@ -96,11 +88,6 @@ class StartTripViewController: UIViewController {
         
         let fuelRange = Int(fuelConsumption*fuelTankCapacity*Int(fuelStatus)/100)
         approxKmLabel.text = "\(fuelRange) Km"
-    }
-    
-    func configureFuelRange(){
-        
-        
     }
         
     func showConfigEmptyAlert() {
@@ -144,6 +131,9 @@ class StartTripViewController: UIViewController {
             UserDefaultManager.shared.defaults?.set(car.fuelConsumption, forKey: "fuelConsumption")
             UserDefaultManager.shared.defaults?.set(car.fuelTankCapacity, forKey: "fuelTankCapacity")
             self.carSpecificationButton.setTitle("  \(car.carName)", for: .normal)
+            
+            configureData()
+            
         }).disposed(by: disposeBag)
         
         present(carSpecVC,animated: true)
